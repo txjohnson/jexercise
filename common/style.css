@@ -1,0 +1,46 @@
+body { font-size: 32px; }
+
+#results {
+		border: 1px solid #CCCCCC;
+		margin-top: 16px;
+		padding-left: 16px;
+		padding-top: 16px;
+		padding-bottom: 16px; 
+		color: green;
+		font-size: 48px; }
+
+textarea {
+	margin-top: 16px;
+	width: 90%;
+	font-size: 32px; }
+
+button {
+	min-width: 4em;
+	font-size: 1em;
+	border: 1px solid black;
+	background-color: white;
+	min-height: 2.5em;
+	cursor: pointer;
+	padding: 0 2em;
+	box-sizing: content-box;
+	color: black; }
+
+.good {
+	color: green;
+}
+
+.bad {
+	color: red;
+}
+
+code {
+	display: block;
+	border: 1px solid #CCCCCC;
+	margin-top: 16px;
+	padding-left: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px; 
+	background-color: white;
+	color: blue;
+	width: 90%;
+}

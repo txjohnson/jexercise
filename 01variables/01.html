@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body>
+<h1>Variables</h1>
+<p>
+Create a variable called 'item' and set is value to "bottle"
+<div include-html="../common/codearea.html"></div>
+
+<script>
+includeHTML();
+
+function doit () {
+	let code = getUserCode ();
+
+	clearMessages ();
+	badIf(test (code, "typeof(item) === 'undefined'"), "item is not defined");
+
+	badIf(test (code, "item !== 'bottle'"), "item is not 'bottle'");
+
+	goodIf(test (code, "item === 'bottle'"), "Looks good!");
+}
+</script>
+</body>

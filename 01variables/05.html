@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body>
+<h1>Variables</h1>
+<p>
+A variable can be assigned a new value at any time using the '=' operator.
+<code>
+	let color = 'red';
+	color = 'green';
+</code>
+<p>
+The variable 'color' starts out as 'red'. (It is initialized to red.) Then it is set to 'green'.
+</p>
+<p>
+What value does x have after execution of the following code?
+</p>
+<code>
+	let x = 'Tic';
+	x = 'Tac';
+	x = 'Toe';
+</code>
+<div include-html="../common/codearea.html"></div>
+
+<script>
+includeHTML();
+
+function doit () {
+	let code = getUserCode ();
+
+	clearMessages ();
+	badIf(test (code) !== 'Toe', "Nope. Try again.");
+	badIf(test (code) === 'undefined', "Nope. Try again.");
+	goodIf(test (code) === 'Toe', "Looks good!");
+}
+</script>
+</body>
