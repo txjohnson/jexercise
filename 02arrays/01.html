@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body>
+<h1>Arrays</h1>
+<p>
+Variables can be combined into a list. Each item in the list is a variable that refers to an an object or value.
+<p>
+Arrays are created using <code>[]</code> notation.</p>
+<pre>
+['A', 'list', 'of', 'strings']
+</pre>
+<p>The above declares a list that has four elements.</p>
+<div include-html="../common/codearea.html"></div>
+<p>Create a list below.</p>
+<script>
+includeHTML();
+
+function doit () {
+	let code = getUserCode ();
+    let arr = ['A', 'list', 'of', 'strings'];
+
+	clearMessages ();
+	badIf(!Array.isArray (test (code)), "Nope. Try again.");
+	goodIf(Array.isArray (test (code)), "Looks good!");
+    
+	badIf(JSON.stringify(arr)==JSON.stringify(test(code)), "But try to make your own.");
+}
+</script>
+</body>

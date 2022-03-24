@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body>
+<h1>Objects</h1>
+<p>
+Variables can be combined into a object. An object is like a dictionary of key/value pairs. These pairs are called properties. In object oriented programming, the key is called a member or member name of an object.</p>
+<p>
+Objects are created using <code>{}</code> notation. The value of each member can be a primitive Javascript type or another object.</p>
+<pre>
+let obj = { name: "Joe", age: 99 };
+</pre>
+<p>The above declares an object that has two properties: a name and an age.
+</p>
+<p>Modify the object below to add a trim property (member) and set its value to 'LX'</p>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+waitForAllIncluded(
+    function() { 
+        setCode ('const car = {\n    make: "Honda",\n    model: "Acura",\n    ? : ?\n};');});
+
+function doit () {
+	let code = getUserCode ();
+    let car = {
+    make: "Honda",
+    model: "Acura",
+    trim : "LX" };
+
+	clearMessages ();
+	badIf (
+        JSON.stringify(test (code, 'car;')) !== JSON.stringify(car), "Nope. Try again.");
+	goodIf (
+        JSON.stringify(test (code, 'car;')) === JSON.stringify(car), "Looks good!");
+}
+</script>
+</body>

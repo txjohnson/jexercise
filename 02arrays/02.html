@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body>
+<h1>Arrays</h1>
+<p>
+Variables can be combined into a list. Each item in the list is a variable that refers to an an object or value.
+<p>
+Arrays are created using <code>[]</code> notation.</p> You can select an item in the array using <code>object []</code> notation.
+<pre>
+let array = ['A', 'list', 'of', 'strings']
+array [1]
+</pre>
+<p>The above declares a list that has four elements. The second line selects an element in the list by index number and yields <code>'list'</code>.</p>
+<p>Select the second item in the list. Change the <code>?</code> to make the code correct.</p>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+waitForAllIncluded(
+    function() { 
+        setCode ('const cars = ["Saab", "Volvo", "BMW"];\nlet x = cars[?];');});
+
+function doit () {
+	let code = getUserCode ();
+
+	clearMessages ();
+	badIf(test (code, "x !== 'Volvo'"), "Nope. Try again.");
+	badIf(test (code, "typeof (x) === 'undefined'"), "Nope. Try again.");
+	goodIf(test (code, "x === 'Volvo'"), "Looks good!");
+    
+}
+</script>
+</body>

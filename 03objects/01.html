@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body>
+<h1>Objects</h1>
+<p>
+Variables can be combined into a object. An object is like a dictionary of key/value pairs. These pairs are called properties. In object oriented programming, the key is called a member or member name of an object.</p>
+<p>
+Objects are created using <code>{}</code> notation. The value of each member can be a primitive Javascript type or another object.</p>
+<pre>
+let obj = { name: "Joe", age: 99 };
+</pre>
+<p>The above declares an object that has two properties: a name and an age.
+</p>
+<p>Create an object below. Complete the assignment.</p>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+waitForAllIncluded(
+    function() { 
+        setCode ('let obj =\n');});
+
+function doit () {
+	let code = getUserCode ();
+    let obj = { name: "Joe", age: 99 };
+
+	clearMessages ();
+	badIf (test (code, "console.log(typeof(obj)); typeof(obj) !== 'object'"), "Nope. Try again.");
+	goodIf (test (code, "typeof(obj) === 'object'"), "Looks good!");
+	badIf (
+        JSON.stringify(test (code, 'obj;')) ==JSON.stringify(obj), "But try to make your own.");
+}
+</script>
+</body>

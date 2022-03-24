@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body>
+<h1>Arrays</h1>
+<p>
+Variables can be combined into a list. Each item in the list is a variable that refers to an an object or value.
+<p>
+Arrays are created using <code>[]</code> notation.</p> Items can be changed using <code>object []</code> notation and assignment.
+<pre>
+let array = ['A', 'list', 'of', 'strings']
+array [0] = 'The';
+</pre>
+<p>The above changes the first element from <code>'A'</code> to <code>'The'</code></p>
+<p>Change the third item in the list to <code>'Ford'</code></p>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+waitForAllIncluded(
+    function() { 
+        setCode ('const cars = ["Saab", "Volvo", "BMW"];\n');});
+
+function doit () {
+	let code = getUserCode ();
+
+	clearMessages ();
+	badIf(test (code, "cars[2] !== 'Ford'"), "Nope. Try again.");
+	goodIf(test (code, "cars[2] === 'Ford'"), "Looks good!");
+}
+</script>
+</body>

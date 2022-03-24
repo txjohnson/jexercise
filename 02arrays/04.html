@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body>
+<h1>Arrays</h1>
+<p>
+Variables can be combined into a list. Each item in the list is a variable that refers to an an object or value.
+<p>
+Arrays are created using <code>[]</code> notation.</p> Items can be changed using <code>object []</code> notation and assignment.
+<pre>
+let array = ['A', 'list', 'of', 'strings']
+array.length  // gives length of the array;
+</pre>
+<p><code>.length</code> accesses the length property of an array.</p>
+<p>Create a variable called <code>x</code> and set it's value to the length of the array.</p>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+waitForAllIncluded(
+    function() { 
+        setCode ('const cars = ["Saab", "Volvo", "BMW"];\n');});
+
+function doit () {
+	let code = getUserCode ();
+
+	clearMessages ();
+    badIf(test (code, "typeof(x) === 'undefined'"), "Please make a variable called x");
+	badIf(test (code, "x !== 3"), "Nope. Try again.");
+	goodIf(test (code, "x === 3"), "Looks good!");
+}
+</script>
+</body>
