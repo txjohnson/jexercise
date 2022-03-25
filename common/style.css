@@ -47,3 +47,15 @@ pre {
 	background-color: white;
 	color: blue;
 }
+
+ul.root li {
+	border: 1px solid #CCCCCC;
+	margin-top: 16px;
+	padding-left: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px; 
+}
+
+ul.sub li {
+	border:none	
+}
