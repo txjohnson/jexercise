@@ -1,6 +1,32 @@
 var __r_elem;
 var all_loaded;
 
+let pages = [
+	"0.1", "../00values/01.html",
+	"0.2", "../00values/02.html",
+	"0.3", "../00values/03.html",
+	"1.1", "../01variables/01.html",
+	"1.2", "../01variables/02.html",
+	"1.3", "../01variables/03.html",
+	"1.4", "../01variables/04.html",
+	"1.5", "../01variables/05.html",
+	"1.6", "../01variables/06.html",
+	"2.1", "../02arrays/01.html",
+	"2.2", "../02arrays/02.html",
+	"2.3", "../02arrays/03.html",
+	"2.4", "../02arrays/04.html",
+	"3.1", "../03objects/01.html",
+	"3.2", "../03objects/02.html",
+	"3.3", "../03objects/03.html",
+	"3.4", "../03objects/04.html",
+	"4.1", "../04control/01.html",
+	"4.2", "../04control/02.html",
+	"4.3", "../04control/03.html",
+	"5.1", "../05functions/01.html",
+	"5.2", "../05functions/02.html",
+	"5.3", "../05functions/03.html",
+];
+
 async function includeHTML() {
 	var z, i, elmnt, file, xhttp;
 	/* Loop through a collection of all HTML elements: */
@@ -83,5 +109,29 @@ function waitForAllIncluded(thendo){
 	}
 	else{
 		 setTimeout(function() { waitForAllIncluded (thendo) }, 250);
+	}
+}
+
+function goPrevious() {
+	let ex = document.body.getAttribute("data-ex");
+	let i = pages .indexOf(ex);
+
+	if (i == 0) {
+		location.replace ("../index.html");
+	}
+	else {
+		location.replace (pages[i - 1]);
+	}
+}
+
+function goNext () {
+	let ex = document.body.getAttribute("data-ex");
+	let i = pages .indexOf(ex);
+
+	if (i == pages.length - 2) {
+		location.replace ("../index.html");
+	}
+	else {
+		location.replace (pages[i + 3]);
 	}
 }

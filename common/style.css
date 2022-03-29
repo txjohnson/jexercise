@@ -57,5 +57,8 @@ ul.root li {
 }
 
 ul.sub li {
-	border:none	
+	border:none;
+	margin-top: 0px;
+	padding-top: none;
+	padding-bottom: none;
 }

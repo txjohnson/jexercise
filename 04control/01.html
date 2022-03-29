@@ -3,10 +3,11 @@
 <link rel="stylesheet" type="text/css" href="../common/style.css"/>
 <script src="../common/util.js"></script>
 </head>
-<body>
-<h1>Constrol Structures</h1>
+<body data-ex="4.1">
+<div include-html="../common/header.html"></div>
+<h1>Control Structures</h1>
 <p>
-Control structures allow let's you specify which block of code is executed and how many times execution will occur.
+Control structures let's you specify which block of code is executed and how many times execution will occur.
 
 <p>
 Arrays are created using <code>[]</code> notation.</p>
@@ -15,7 +16,7 @@ let i = 55;
 if (i > 64) { console.log ("too fast") }
 
 </pre>
-<p>The above only output "too fast" if <code>i</code> is more than 64.</p>
+<p>The above only outputs "too fast" if <code>i</code> is more than 64.</p>
 <div include-html="../common/codearea.html"></div>
 <p>What is in this example</p>
 <pre>
@@ -31,7 +32,7 @@ function doit () {
 
 	clearMessages ();
 	badIf(test (code) !== 20, "Nope. Try again.");
-	goodIf(test (code) === 20), "Looks good!");    
+	goodIf(test (code) === 20, "Looks good!");    
 }
 </script>
 </body>
