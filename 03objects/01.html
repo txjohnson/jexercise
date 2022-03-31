@@ -26,12 +26,14 @@ waitForAllIncluded(
 function doit () {
 	let code = getUserCode ();
     let obj = { name: "Joe", age: 99 };
+	let score = 0;
 
 	clearMessages ();
-	badIf (test (code, "console.log(typeof(obj)); typeof(obj) !== 'object'"), "Nope. Try again.");
-	goodIf (test (code, "typeof(obj) === 'object'"), "Looks good!");
-	badIf (
+	score += badIf (test (code, "console.log(typeof(obj)); typeof(obj) !== 'object'"), "Nope. Try again.");
+	score += goodIf (test (code, "typeof(obj) === 'object'"), "Looks good!");
+	score += badIf (
         JSON.stringify(test (code, 'obj;')) ==JSON.stringify(obj), "But try to make your own.");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

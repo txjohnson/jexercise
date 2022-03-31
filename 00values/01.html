@@ -25,11 +25,13 @@ includeHTML();
 
 function doit () {
 	let code = getUserCode ();
+	let score = 0;
 
 	clearMessages ();
-	badIf(typeof (test (code)) !== 'string', "Nope. Try again.");
-	goodIf(typeof (test (code)) === 'string', "Looks good!");
-	badIf(test(code) === 'Larry', "But try a different string");
+	score += badIf(typeof (test (code)) !== 'string', "Nope. Try again.");
+	score += goodIf(typeof (test (code)) === 'string', "Looks good!");
+	score += badIf(test(code) === 'Larry', "But try a different string");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

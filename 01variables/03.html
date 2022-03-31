@@ -16,13 +16,13 @@ waitForAllIncluded(function() { setCode ("let ? = ?;\nlet y = 123;\nx ? y;");});
 
 function doit () {
 	let code = getUserCode ();
+	let score = 0;
 
 	clearMessages ();
-	badIf(test (code, "typeof(x) === 'undefined'"), "x is not defined");
-
-	badIf(test (code) !== 468, "It doesn't add up");
-
-	goodIf(test (code) === 468, "Looks good!");
+	score += badIf(test (code, "typeof(x) === 'undefined'"), "x is not defined");
+	score += badIf(test (code) !== 468, "It doesn't add up");
+	score += goodIf(test (code) === 468, "Looks good!");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

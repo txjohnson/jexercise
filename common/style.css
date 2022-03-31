@@ -33,6 +33,10 @@ button {
 	color: red;
 }
 
+.warn {
+	color:cornflowerblue;
+}
+
 code {
 	color: blue;
 }
@@ -46,6 +50,22 @@ pre {
 	padding-bottom: 16px; 
 	background-color: white;
 	color: blue;
+}
+
+table {
+	border-collapse: collapse;
+	font-size: 24px;
+	border: 1px solid #CCCCCC;
+	margin-top: 16px;
+	padding-left: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px; 
+	background-color: white;
+	color: blue;
+}
+
+tr {
+	border: 1px solid #cccccc;
 }
 
 ul.root li {

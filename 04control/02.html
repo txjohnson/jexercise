@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body data-ex="4.2">
+<div include-html="../common/header.html"></div>
+<h1>Control Structures</h1>
+<p>
+Control structures let's you specify which block of code is executed or how many times execution will occur.
+<pre>
+let i = 55;
+if (i > 64) { console.log ("too fast") }
+else { console.log ("ok") }
+</pre>
+<p>The above only outputs "too fast" if <code>i</code> is more than <code>64</code>. Otherwise it will output "ok". This is a called a <b>mutually exclusive condition</b>. This type of condition has, at least, four parts: <code>if</code> that marks the start of a conditional statement, a test expression in <code>()</code> a block of code to execute in <code>{}</code> if the test turns out to be true, an <code>else</code> clause that has a block of code in <code>{}</code> for the case where the test fails to be true.</p>
+<p>Logically, this is like a fork in the road. Only one path an be taken at a time. The path taken depends on the answer to the test. If the test is true, one path is taken. The other path is taken if the test turns out false.</p>
+<p>What is <code>i</code>in this example?</p>
+<pre>
+let i;
+let j = 4;
+if (j > 10) { i = 'cat' }
+else { i = 'dog' }
+</pre>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+
+function doit () {
+	let code = getUserCode ();
+
+	clearMessages ();
+	badIf(test (code) !== 'dog', "Nope. Try again.");
+	goodIf(test (code) === 'dog', "Looks good!");    
+}
+</script>
+</body>

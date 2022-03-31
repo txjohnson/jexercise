@@ -25,10 +25,12 @@ waitForAllIncluded(
 
 function doit () {
 	let code = getUserCode ();
-
+	let score = 0;
+	
 	clearMessages ();
-	badIf(test (code, "cars[2] !== 'Ford'"), "Nope. Try again.");
-	goodIf(test (code, "cars[2] === 'Ford'"), "Looks good!");
+	score += badIf(test (code, "cars[2] !== 'Ford'"), "Nope. Try again.");
+	score += goodIf(test (code, "cars[2] === 'Ford'"), "Looks good!");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

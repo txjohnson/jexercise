@@ -7,7 +7,7 @@
 <div include-html="../common/header.html"></div>
 <h1>Variables</h1>
 <p>
-What vale does x have after the following code is executed?
+What value does x have after the following code is executed?
 <code>let x = 'Horse';</code>
 <div include-html="../common/codearea.html"></div>
 
@@ -16,11 +16,13 @@ includeHTML();
 
 function doit () {
 	let code = getUserCode ();
+	let score = 0;
 
 	clearMessages ();
-	badIf(test (code) !== 'Horse', "Nope. Try again.");
-	badIf(test (code) === 'undefined', "Nope. Try again.");
-	goodIf(test (code) === 'Horse', "Looks good!");
+	score += badIf(test (code) !== 'Horse', "Nope. Try again.");
+	score += badIf(test (code) === 'undefined', "Nope. Try again.");
+	score += goodIf(test (code) === 'Horse', "Looks good!");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

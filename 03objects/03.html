@@ -24,17 +24,20 @@ waitForAllIncluded(
         setCode ('const car = {\n    make: "Honda",\n    model: "Acura",\n    ? : ?\n};');});
 
 function doit () {
-	let code = getUserCode ();
+        let code = getUserCode ();
     let car = {
     make: "Honda",
     model: "Acura",
     trim : "LX" };
 
+        let score = 0;
+
 	clearMessages ();
-	badIf (
+	score += badIf (
         JSON.stringify(test (code, 'car;')) !== JSON.stringify(car), "Nope. Try again.");
-	goodIf (
+	score += goodIf (
         JSON.stringify(test (code, 'car;')) === JSON.stringify(car), "Looks good!");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

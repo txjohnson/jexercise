@@ -30,10 +30,12 @@ includeHTML();
 
 function doit () {
 	let code = 'const person = { name: "Dr Who", address: "somewhere in time" };' + getUserCode ();
+    let score = 0;
 
 	clearMessages ();
-	badIf(test (code) !== 'somewhere in time', "Nope. Try again.");
-	goodIf(test (code) === 'somewhere in time', "Looks good!");
+	score += badIf(test (code) !== 'somewhere in time', "Nope. Try again.");
+	score += goodIf(test (code) === 'somewhere in time', "Looks good!");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

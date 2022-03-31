@@ -22,12 +22,13 @@ includeHTML();
 function doit () {
 	let code = getUserCode ();
     let arr = ['A', 'list', 'of', 'strings'];
+	let score = 0;
 
 	clearMessages ();
-	badIf(!Array.isArray (test (code)), "Nope. Try again.");
-	goodIf(Array.isArray (test (code)), "Looks good!");
-    
-	badIf(JSON.stringify(arr)==JSON.stringify(test(code)), "But try to make your own.");
+	score += badIf(!Array.isArray (test (code)), "Nope. Try again.");
+	score += goodIf(Array.isArray (test (code)), "Looks good!");
+	score += badIf(JSON.stringify(arr)==JSON.stringify(test(code)), "But try to make your own.");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

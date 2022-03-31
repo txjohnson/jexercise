@@ -22,6 +22,8 @@ let pages = [
 	"4.1", "../04control/01.html",
 	"4.2", "../04control/02.html",
 	"4.3", "../04control/03.html",
+	"4.4", "../04control/04.html",
+	"4.5", "../04control/05.html",
 	"5.1", "../05functions/01.html",
 	"5.2", "../05functions/02.html",
 	"5.3", "../05functions/03.html",
@@ -67,27 +69,38 @@ function clearMessages () {
 	__r_elem.innerHTML="";
 }
 
+function warn (m) {
+	if (!__r_elem) {
+		__r_elem = document.getElementById("results"); }
+
+	div.className = "warn";
+	div.innerHTML = m;
+	__r_elem .appendChild (div);
+}
+
 function goodIf (t, m) {
 	if (!__r_elem) {
 		__r_elem = document.getElementById("results"); }
 
-	if (t === false) return;
+	if (t === false) return 0;
 
 	let div = document.createElement('div');
 	div.className = "good";
 	div.innerHTML = m;
 	__r_elem .appendChild (div);
+	return 100;
 }
 
 function badIf (t, m) {
 	if (!__r_elem) {
 		__r_elem = document.getElementById("results"); }
 
-	if (t === false) return;
+	if (t === false) return 0;
 	let div = document.createElement('div');
 	div.className = "bad";
 	div.innerHTML = m;
 	__r_elem .appendChild (div);
+	return -10;
 }
 
 function test (code, assertion) {

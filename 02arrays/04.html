@@ -25,11 +25,13 @@ waitForAllIncluded(
 
 function doit () {
 	let code = getUserCode ();
+	let score = 0;
 
 	clearMessages ();
-    badIf(test (code, "typeof(x) === 'undefined'"), "Please make a variable called x");
-	badIf(test (code, "x !== 3"), "Nope. Try again.");
-	goodIf(test (code, "x === 3"), "Looks good!");
+    score += badIf(test (code, "typeof(x) === 'undefined'"), "Please make a variable called x");
+	score += badIf(test (code, "x !== 3"), "Nope. Try again.");
+	score += goodIf(test (code, "x === 3"), "Looks good!");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

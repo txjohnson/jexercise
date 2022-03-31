@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="../common/style.css"/>
 <script src="../common/util.js"></script>
 </head>
-<body data-ex="4.3">
+<body data-ex="4.4">
 <div include-html="../common/header.html"></div>
 <h1>Control Structures</h1>
 <p>
@@ -16,24 +16,25 @@ else { console.log ("ok") }
 </pre>
 <p>The above only outputs "too fast" if <code>i</code> is more than <code>64</code>, outputs "too slow" if <code>i</code> is less than <code>45</code> and otherwise outputs "ok". This is a called a <b>general mutually exclusive condition</b>. This type of condition has several parts: <code>if</code> that marks the start of a conditional statement, a test expression in <code>()</code> a block of code to execute in <code>{}</code> if the test turns out to be true, several <code>else if</code> fragments, and a possible <code>else</code> clause with a block in <code>{}</code> for when all else fails.</p>
 <p>Logically, this is like a multi-way fork in the road. Only one path an be taken at a time. Each path is guarded by a test. If the test succeeds, then the path is taken. If no test succeeds, and there is a final <code>else</code> path, then that one is taken.</p>
-<p>What is <code>i</code>in this example?</p>
-<pre>
-let i;
-let j = 8;
-if (j > 10) { i = 'cat' }
-eles if (j > 4) { i = 'mouse' }
-else { i = 'dog' }
-</pre>
+<p>Given a variable <code>c</code> that contains an integer between 0 and 1, set another variable called <code>bit</code> to either <code>'zero'</code> or <code>'one'</code> depending on the value of c.</p>
 <div include-html="../common/codearea.html"></div>
 <script>
 includeHTML();
+waitForAllIncluded(
+    function() { 
+        setCode ('let bit = "";\n');});
 
 function doit () {
-	let code = getUserCode ();
+	let code1 = "let c = 0; " + getUserCode ()
+	let code2 = "let c = 1; " + getUserCode ()
+	let score = 0;
 
 	clearMessages ();
-	badIf(test (code) !== 'mouse', "Nope. Try again.");
-	goodIf(test (code) === 'mouse', "Looks good!");    
+
+	score += badIf(test (code1, "bit !== 'zero'"), "'bit' not right when c === 0");
+	score += badIf(test (code2, "bit !== 'one'"), "'bit' not right when c === 1");
+	score += goodIf(test (code1, "bit === 'zero'") && test (code2, "bit === 'one'"), "Looks good!");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

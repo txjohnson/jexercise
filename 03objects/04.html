@@ -29,12 +29,14 @@ function doit () {
     let car = {
     make: "Honda",
     model: "Accord" };
- 
+        let score = 0;
+
 	clearMessages ();
-	badIf (
+	score += badIf (
         JSON.stringify(test (code, 'car;')) !== JSON.stringify(car), "Nope. Try again.");
-	goodIf (
+	score += goodIf (
         JSON.stringify(test (code, 'car;')) === JSON.stringify(car), "Looks good!");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

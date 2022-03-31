@@ -7,7 +7,7 @@
 <div include-html="../common/header.html"></div>
 <h1>Variables</h1>
 <p>
-Create a variable called 'item' and set is value to "bottle"
+Create a variable called 'item' and set its value to "bottle"
 <div include-html="../common/codearea.html"></div>
 
 <script>
@@ -15,13 +15,13 @@ includeHTML();
 
 function doit () {
 	let code = getUserCode ();
+	let score = 0;
 
 	clearMessages ();
-	badIf(test (code, "typeof(item) === 'undefined'"), "item is not defined");
-
-	badIf(test (code, "item !== 'bottle'"), "item is not 'bottle'");
-
-	goodIf(test (code, "item === 'bottle'"), "Looks good!");
+	score += badIf(test (code, "typeof(item) === 'undefined'"), "item is not defined");
+	socre += badIf(test (code, "item !== 'bottle'"), "item is not 'bottle'");
+	score += goodIf(test (code, "item === 'bottle'"), "Looks good!");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>

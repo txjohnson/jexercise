@@ -15,13 +15,13 @@ includeHTML();
 
 function doit () {
 	let code = getUserCode ();
+	let score = 0;
 
 	clearMessages ();
-	badIf(test (code, "typeof(x) === 'undefined'"), "x is not defined");
-
-	badIf(test (code, "x !== 50"), "item is not 50");
-
-	goodIf(test (code, "x === 50"), "Looks good!");
+	score+= badIf(test (code, "typeof(x) === 'undefined'"), "x is not defined");
+	score+= badIf(test (code, "x !== 50"), "item is not 50");
+	score+= goodIf(test (code, "x === 50"), "Looks good!");
+	badIf (score === 0, "Nope. Try again");
 }
 </script>
 </body>
