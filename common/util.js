@@ -24,6 +24,11 @@ let pages = [
 	"4.3", "../04control/03.html",
 	"4.4", "../04control/04.html",
 	"4.5", "../04control/05.html",
+	"4.6", "../04control/06.html",
+	"4.7", "../04control/07.html",
+	"4.8", "../04control/08.html",
+	"4.9", "../04control/09.html",
+	"4.10", "../04control/10.html",
 	"5.1", "../05functions/01.html",
 	"5.2", "../05functions/02.html",
 	"5.3", "../05functions/03.html",
@@ -104,7 +109,6 @@ function badIf (t, m) {
 }
 
 function test (code, assertion) {
-	;
 	let r;
 	if (assertion) r = eval (code + ";\n" + assertion);
 	else r = eval (code);

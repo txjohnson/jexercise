@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body data-ex="4.9">
+<div include-html="../common/header.html"></div>
+<h1>Control Structures</h1>
+<p>
+Control structures let's you specify which block of code is executed or how many times execution will occur.
+<pre>
+let numbers = [5, 2, 8, 9];
+let i = 0;
+let sum = 0;
+while (i < numbers.length) {
+    sum += numbers [i]
+    i += 1;
+}
+console.log(sum)
+</pre>
+<p>This is an example of a <code>while</code> loop. A <code>while</code> loop repeats a block as long as a condition is true. The above example loops over the values in a list, building up a sum along the way. Finally the sum is written to the console. Compare this with the <code>for</code> version in a previous exercise. In the most general case, we don't know how many times a while loop will repeat.</p>
+<p>A <code>while</code> loop has two parts: the <code>while</code> that declares what follows will be a loop, a condition that determines whether or not the block should repeat in <code>()</code>, and the body, enclosed in <code>{}</code>, that will be executed 0 or more times.
+</p>
+<p>Given a function <code>getNum()</code>that produces a sequence of 0s and 1s, write a while that will count 0s but stop as soon as it receives a 1. The variable <code>count</code> is provied. Make count go up by 1 as long as a 0 is received.</p>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+waitForAllIncluded(
+    function() { 
+        setCode ('let count = 0;\n');});
+
+var seq = [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1];
+var counti = 0;
+function getNum() {
+    let a = seq[counti];
+    counti ++;
+    return a;
+}
+
+function doit () {
+	let code = getUserCode () + "; count;";
+	clearMessages ();
+    let score = 0
+
+	score += badIf(test (code) !== 5, "Not quite. Try again.");
+	score += goodIf(test (code) === 5, "Looks good!");
+	badIf (score === 0, "Nope. Try again");
+}
+</script>
+</body>

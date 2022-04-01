@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body data-ex="4.8">
+<div include-html="../common/header.html"></div>
+<h1>Control Structures</h1>
+<p>
+Control structures let's you specify which block of code is executed or how many times execution will occur.
+<pre>
+let numbers = [5, 2, 8, 9];
+let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers [i]
+}
+console.log(sum)
+</pre>
+<p>
+A <code>for</code> loop has three parts: the <code>for</code> that declares what follows will be a loop, a head that sets the behavior of the loop inside the <code>()</code>, and the body, enclosed in <code>{}</code>, that will be executed 0 or more times.
+</p>
+<p>
+The head has a number of parts as well. A semicolon (<code>;</code>) separates each section. The first part sets the initial state of the loop -- by declaring and initializing a variable or using a variable in scope. The second part, sets the termination condition. The final part specifies how the variable will change on each iteration.
+</p>
+<p>
+We can add values to a list using push.
+</p>
+<pre>
+let list = [];
+list .push (5)
+</pre>
+<p>
+By the end of execution list has become <code>[5]</code>.
+</p>
+<p>Given an array <code>a</code> of numbers, create a variable named <code>avg</code> and assign it the average of the numbers in <code>l</code>. You will need to write a <code>for</code> loop to collect the sum. Remember the average is the sum of a list divided by its length. (Dont forget: The length of every array can obtained by the <code>length</code> property. See the arrays section.)</p>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+
+function doit () {
+    let a = "[";
+    let avg = 0;
+    for (let i = 0; i != 10; ++i) {
+        if (i > 0) a += ", ";
+        let n = Math.floor(Math.random() * 100 + 1);
+        avg += n;
+        a += n.toString(); }
+    a += "]";
+    avg /= 10;
+
+	let code = `let a = ${a};` + getUserCode ()
+	clearMessages ();
+    let score = 0
+
+	score += badIf(test (code, "typeof(avg) === 'undefined'"), "avg is not defined");
+    let uavg = test (code, ";avg;");
+	score += badIf(uavg !== avg, `with a = ${a}, you set avg to ${uavg} when it should be ${avg}`);
+	score += goodIf(uavg === avg, `Looks good! With a = ${a}, avg should be ${avg} and it was!`);
+	badIf (score === 0, "Nope. Try again");
+}
+</script>
+</body>

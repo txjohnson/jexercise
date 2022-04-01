@@ -42,11 +42,11 @@ function doit () {
 
 	clearMessages ();
 
-	score += badIf(test (code1, "dir !== 'left'"), "'dir' not right when c === 8");
-	score += badIf(test (code2, "dir !== 'right'"), "'dir' not right when c === -8");
-	score += badIf(test (code3, "dir !== 'left'"), "'dir' not right when c === 16");
-	score += badIf(test (code4, "dir !== 'right'"), "'dir' not right when c === -16");
-	score += goodIf(test (code1, "dir === 'zero'") && test (code2, "bit === 'one'"), "Looks good!");
+	score += badIf(test (code1, "dir !== 'left'"), "'dir' not correct when c === 8");
+	score += badIf(test (code2, "dir !== 'right'"), "'dir' not correct when c === -8");
+	score += badIf(test (code3, "dir !== 'forward'"), "'dir' not correct when c === 16");
+	score += badIf(test (code4, "dir !== 'back'"), "'dir' not correct when c === -16");
+	score += goodIf(score === 0, "Looks good!");
 	badIf (score === 0, "Nope. Try again");
 }
 </script>

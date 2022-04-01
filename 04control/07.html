@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body data-ex="4.7">
+<div include-html="../common/header.html"></div>
+<h1>Control Structures</h1>
+<p>
+Control structures let's you specify which block of code is executed or how many times execution will occur.
+<pre>
+let numbers = [5, 2, 8, 9];
+let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers [i]
+}
+console.log(sum)
+</pre>
+<p>
+A <code>for</code> loop has three parts: the <code>for</code> that declares what follows will be a loop, a head that sets the behavior of the loop inside the <code>()</code>, and the body, enclosed in <code>{}</code>, that will be executed 0 or more times.
+</p>
+<p>
+The head has a number of parts as well. A semicolon (<code>;</code>) separates each section. The first part sets the initial state of the loop -- by declaring and initializing a variable or using a variable in scope. The second part, sets the termination condition. The final part specifies how the variable will change on each iteration.
+</p>
+<p>How many times does this loop repeat?</p>
+<pre>
+let sum = 0
+for (let i = 0; i !== 10; i += 2) {
+    sum += i
+}
+</pre>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+
+function doit () {
+	let code = getUserCode ()
+	clearMessages ();
+    let score = 0
+
+	score += badIf(test (code) !== 5, "Not quite. Try again.");
+	score += goodIf(test (code) === 5, "Looks good!");
+	badIf (score === 0, "Nope. Try again");
+}
+</script>
+</body>

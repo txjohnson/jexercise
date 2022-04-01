@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body data-ex="4.6">
+<div include-html="../common/header.html"></div>
+<h1>Control Structures</h1>
+<p>
+Control structures let's you specify which block of code is executed or how many times execution will occur.
+<pre>
+let numbers = [5, 2, 8, 9];
+let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers [i]
+}
+console.log(sum)
+</pre>
+<p>This is an example of a <code>for</code> loop. A <code>for</code> loop repeats a block of code a (usually) predetermined number of times. The above example loops over the values in a list, building up a sum along the way. Finally the sum is written to the console. The loop is bounded because the number of iterations depends directly on the length of the list.</p>
+<p>The loop variable <code>i</code> is declared in the loop head.It only exists for the duration of the list. Using this variable that changes on each repetition, i is used to index into the numbers array and obtain the value at each index.</p>
+<p>What is the value of sum at the end of this loop.</p>
+<pre>
+let sum = 0
+for (let i = 0; i < 10; i++) {
+    sum += i
+}
+</pre>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+
+function doit () {
+	let code = getUserCode ()
+	clearMessages ();
+    let score = 0
+
+	score += badIf(test (code) !== 45, "Not quite. Try again.");
+	score += goodIf(test (code) === 45, "Looks good!");
+	badIf (score === 0, "Nope. Try again");
+}
+</script>
+</body>

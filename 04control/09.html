@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body data-ex="4.9">
+<div include-html="../common/header.html"></div>
+<h1>Control Structures</h1>
+<p>
+Control structures let's you specify which block of code is executed or how many times execution will occur.
+<pre>
+let numbers = [5, 2, 8, 9];
+let i = 0;
+let sum = 0;
+while (i < numbers.length) {
+    sum += numbers [i]
+    i += 1;
+}
+console.log(sum)
+</pre>
+<p>This is an example of a <code>while</code> loop. A <code>while</code> loop repeats a block as long as a condition is true. The above example loops over the values in a list, building up a sum along the way. Finally the sum is written to the console. Compare this with the <code>for</code> version in a previous exercise. In the most general case, we don't know how many times a while loop will repeat.</p>
+<p>The loop variable <code>i</code> is outside of the loop. While loops don't necessarily need a loop version. This one happens to have one. Note that it is up to the loop body to get things ready for the next iteration of the loop.</p>
+<p>What is the value of <code>i</code> by the end of this loop?</p>
+<pre>
+let numbers = [4, 2, 10, 6, 8, 9];
+let i = 0
+while (numbers[i] < 10) {
+    i += 1;
+}
+</pre>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+
+function doit () {
+	let code = getUserCode ()
+	clearMessages ();
+    let score = 0
+
+	score += badIf(test (code) !== 2, "Not quite. Try again.");
+	score += goodIf(test (code) === 2, "Looks good!");
+	badIf (score === 0, "Nope. Try again");
+}
+</script>
+</body>
