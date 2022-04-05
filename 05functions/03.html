@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body data-ex="5.3">
+<div include-html="../common/header.html"></div>
+<h1>Functions</h1>
+<p>
+A function is a block of code that can be called from other parts of a program. A function may or may not accept inputs and may or may not produce an ouput.</p>
+<pre>
+function double(n) {
+    return n * 2;
+}
+</pre>
+<p>This is an example of a <code>function</code> that takes a single input. Inputs to a function are called arguments or parameters. This function produces double what it is given as input. Calling this function, <code>double(5)</code>, will produce <code>10</code></p>
+<p>
+Remember, the <code>()</code> are important. They mark the inputs to a function. The inputs always go inside the <code>()</code>. If there are many parameters, they need to be separated by <code>,</code>. </p>
+<p>
+Create a function called <code>greet</code> that takes a name and produces a greeting like <code>'Hello name'</code> where <code>name</code> is the name given to the function as input. Example <code>greet ('Joe')</code> will produce the string <code>'Hello Joe'</code>.
+</p>
+
+<p>Create a function named <code>greet()</code> that returns the string <code>'Hello world'</code>.</p>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+
+function doit () {
+	let code = getUserCode ();
+	clearMessages ();
+    let score = 0
+
+	score += badIf(test (code, "typeof(greet) === 'undefined'"), "greet() is not defined");
+	score += badIf(test (code, "greet('Melba') !== 'Hello Melba'"), "Not quite. Try again.");
+	score += goodIf(test (code, "greet('Melba') === 'Hello Melba'"), "Looks good!");
+	badIf (score === 0, "Nope. Try again");
+}
+</script>
+</body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+<script src="../common/util.js"></script>
+</head>
+<body data-ex="5.1">
+<div include-html="../common/header.html"></div>
+<h1>Functions</h1>
+<p>
+A function is a block of code that can be called from other parts of a program. A function may or may not accept inputs and may or may not produce an ouput.</p>
+<pre>
+function speedLimit() {
+    return 25;
+}
+</pre>
+<p>This is an example of a <code>function</code>. This function accepts no inputs and produces a the number <code>25</code> as output. Calling this function, <code>speedLimit()</code>, will cause the string to be returned as the result</p>
+<p>
+The <code>()</code> are important. They mark the inputs to a function. If a function has no inputs, then they are empty as shown. In Javascript, function declarations and calls need the <code>()</code> -- even when there are no inputs.</p>
+<p>
+Note that the <code>return</code> statements is how values is returned from functions.
+</p>
+
+<p>What value does x have at?</p>
+<pre>
+function acolor () {
+    return 'blue';
+}
+
+let x = acolor ();
+</pre>
+<p>Create a function named <code>greet()</code> that returns the string <code>'Hello world'</code>.</p>
+<div include-html="../common/codearea.html"></div>
+<script>
+includeHTML();
+
+function doit () {
+	let code = getUserCode ();
+	clearMessages ();
+    let score = 0
+
+	score += badIf(test (code) !== 'blue', "Not quite. Try again.");
+	score += goodIf(test (code) === 'blue', "Looks good!");
+	badIf (score === 0, "Nope. Try again");
+}
+</script>
+</body>
