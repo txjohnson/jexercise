@@ -14,17 +14,23 @@ textarea {
 	width: 90%;
 	font-size: 32px; }
 
+.nav {
+	background-color: lawngreen;
+	font-size: 0.5em;
+	width: 6em;
+}
 button {
 	min-width: 4em;
 	font-size: 1em;
+/*
 	border: 1px solid black;
 	background-color: white;
+*/
 	min-height: 2.5em;
 	cursor: pointer;
 	padding: 0 2em;
 	box-sizing: content-box;
 	color: black; }
-
 .good {
 	color: green;
 }

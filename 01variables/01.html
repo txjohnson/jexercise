@@ -5,9 +5,20 @@
 </head>
 <body data-ex="1.1">
 <div include-html="../common/header.html"></div>
-<h1>Variables</h1>
+<h1>Variables 1.1</h1>
 <p>
-Create a variable called 'item' and set its value to "bottle"
+Variables... vary. They are a piece of memory that hold values. They're called variables because the values they hold can change.
+</p>
+<pre>
+	var x;
+	let y = 10;
+</pre>
+<p>
+The above introduces two variables. <code>x</code> is introduced but it has no value. It is <code>undefined</code>.  <code>y</code> introduces a variable and set its value to 10. <code>y</code> is said to be <em>initialized</em> to <code>10</code>.
+</p>
+<p>Variables are created using <code>var</code> or <code>let</code>. The difference between the two is that <code>var</code> introduces a variable visible to the entire app. Meanwhile <code>let</code> introduces a variable visible only within the surrounding block (code in between <code>{</code> and <code>}</code>.</p>
+<p>
+Create a variable called 'item' and set its value to "bottle". Use 
 <div include-html="../common/codearea.html"></div>
 
 <script>
@@ -19,7 +30,7 @@ function doit () {
 
 	clearMessages ();
 	score += badIf(test (code, "typeof(item) === 'undefined'"), "item is not defined");
-	socre += badIf(test (code, "item !== 'bottle'"), "item is not 'bottle'");
+	score += badIf(test (code, "item !== 'bottle'"), "item is not 'bottle'");
 	score += goodIf(test (code, "item === 'bottle'"), "Looks good!");
 	badIf (score === 0, "Nope. Try again");
 }
